@@ -67,6 +67,11 @@ p, a {
   font-weight: 700; /* Raleway 700 */
 }
 
+.nav img {
+  width: 50px;
+  display: none; /*  */
+}
+
 /* (2) Banner Area */
 .banner {
   /* border: 2px solid red; */
@@ -460,4 +465,64 @@ form input[type="submit"] {
   /* width: 25%; */
   width: 33.33%;
   text-align: center;
+}
+
+/* to make the website responsive */
+/* 768px the largest screen size so far */
+/* the properties defined here will only be applied to screens gaving 0px - 768px its width */
+@media screen and (max-width:768px) {
+  .nav ul {
+    display: none;
+  }
+
+  /*  This icon can't be clicked since we are testing how to create a responsive design */
+  .nav img {
+    border: 2px solid red; /* just to check where the icon is placed */
+    display: block; /*  display the hamberger icon */
+    margin-left: 90%; /* 500px works but 400px doesn't... depends on what device you want to display */
+  }
+
+  .banner-text h2 {
+    line-height: 1em;
+  }
+
+  .ads-items {
+    width: 100%;
+  }
+
+  .ads-item1 {
+    margin-bottom: 3%;
+  }
+
+  .merch-items {
+    width: 47%;
+    margin: 1.5%;
+  }
+
+  .ads-items3, .ads-items4, .ads-items5, .ads-items6 {
+    width: 100%;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+  
+  .form-group:nth-child(2) {
+    margin-top: 1.5%;
+  }
+
+  .footer-widget {
+    width: 47%;
+    margin: 1.5%;
+  }
+
+  .footer-widget:nth-child(1), .footer-widget:nth-child(2) {
+    margin-bottom: 3px;
+  }
+
+  .footer-content * {
+    text-align: center;
+  }
 }
