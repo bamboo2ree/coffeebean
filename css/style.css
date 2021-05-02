@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Raleway:wght@400;500;700&display=swap');
+
+/* ↑ import fonts from google */
+
+* {
+  /* background-color: aliceblue; */
+  /* css has its own settings. So it's better to RESET the CSS. (CSS RESET) */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* include the border */
+  border: none;
+  outline: none;
+}
+
+/* Even though there is no h5 and h6 now, write them just in case so that you can add them anytime. */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald', sans-serif;   /* sans-serif is a backup font */
+}
+
+p, a {
+  font-family: 'Raleway', sans-serif;
+}
+
+.wrapper {
+  width: 100%; /* Entire screen */
+  margin: auto;
+}
+
+/* (1) Header Area */
+.nav {
+  /* border: 2px solid red; */
+  width: 85%;
+  margin: 1em auto; /* left and right if only set margin: auto; */
+  overflow: auto; /* to fix h2 position */
+}
+
+.nav h1 {
+  /* border: 2px solid green; */
+  width: 50%;
+  float: left;
+}
+
+.nav h1 a {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase; /* make the letter capital */
+  text-decoration: none; /* No underline */
+  color: #96746b;
+}
+
+.nav ul {
+  /* border: 2px solid blue; */
+  width: 50%;
+  float: left;
+  text-align: right;
+  padding-top: 1em;
+}
+
+.nav ul li {
+  /* border: 2px solid orange; */
+  display: inline-block; /* inline doesn't suit here. The borders overwarp. */
+  margin-left: 1em;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: #312a26;
+  font-weight: 700; /* Raleway 700 */
+}
+
+/* (2) Banner Area */
+.banner {
+  /* border: 2px solid red; */
+  width: 100%;
+  height: 670px;
+  background-image: url('../images/banner-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative; /* parent of the banner-text */
+}
+
+.banner-text {
+  /* border: 2px solid yellow; */
+  width: 45%;
+  position: absolute; /* child of the banner */
+  left: 7.5%; /* The width of the nav is 85%. margin auto means there are 15% left. Then 15 / 2 = 7.5 */
+  top: 50%; /* From the upper left corner -> 50%  *Center of the text should be top 50%... */
+  transform: translateY(-50%); /* move up -> negative 50% */
+}
+
+.banner-text h2 {
+  color:#c7a17a;
+  font-size: 4em;
+  text-transform: uppercase;
+}
+
+.banner-text span {
+  color: #96746b;
+}
+
+.banner-text p {
+  color: #fff;
+}
+
+.banner-text a {
+  color: #fff;
+  text-decoration: none;
+  background-color: #312a26;
+  font-weight: 700;
+  padding: 1em; /* put space before the text of 1em */
+  margin-top: 1em; /* add space before the button on top of 1em */
+  display: inline-block; /* the margins, paddings, height and width should be respected */
+}
+
+/* (3) Ads Area */
+
+.ads {
+  /* border: 2px solid red; */
+  width: 85%;
+  margin: 4em auto; /* center */
+  overflow: auto; /*  No height is defined. That7s why this "overflow" HANDLES the children inside this div */
+}
+
+.ads-items {
+  /* border: 2px solid green; */
+  width: 48.5%; /* 100 - 3(margin-right)=97 97 / 2 = 48.5% *SHOULD BE 100% */
+  float: left;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  position: relative; /* the Parent of ads-text */
+}
+
+.ads-item1 {
+  margin-right: 3%; /* 100 - 3(margin-right) = 97 , 97 / 2 = 48.5% *SHOULD BE 100% */
+  background-image: url('../images/ads-img1.jpg');
+}
+
+.ads-item2 {
+  background-image: url('../images/ads-img2.jpg');
+}
+
+.ads-text h3 {
+  color: #fff;
+  font-size: 2em;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 6px #312a26;
+  line-height: 1.2em; /* Smaller than the font size */
+}
+
+.ads-text a {
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 6px #312a26;
+  display: inline-block;
+  margin-top: 1em;
+}
+
+.ads-text {
+  /* border: 2px solid red; */
+  width: 40%;
+  position: absolute; /* child */
+  top: 30%;
+  left: 10%;
+  /* transform: translateY(-30%); */
+}
+
+/* (4) Merchandise Area */
+.merch {
+  /* border: 2px solid red; */
+  width: 85%;
+  margin: 4em auto;
+}
+
+.section-header {
+  text-align: center;
+}
+
+.section-header span {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  color: #c7a17a;
+}
+
+.section-header h2 {
+  color: #312a26;
+  text-transform: uppercase;
+}
+
+.section-header hr {
+  background-color: #c7a17a;
+  height: 2px; /* thickness */
+  width: 25%; /* 1/4 of the container width */
+  margin: auto; /* center */
+}
+
+.merch-gallery {
+  overflow: auto; /* images are no longer outside */
+  margin-top: 2em;
+}
+
+.merch-items {
+  /* border: 2px solid red; */
+  width: 24.25%; /* there should be 4 images in one line  -> 25% to 22% because margin-right is set */
+  float: left;
+  margin-right: 1%;
+  margin-bottom: 1%;
+}
+
+.merch-items img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover; /* This is for img tags */
+}
+
+/* call the fourth child without specifying another class name */
+/* .merch-items:nth-child(4), .merch-items:nth-child(8)  */
+.merch-items:nth-child(4), .merch-items:nth-child(8) {
+  margin-right: 0px;
+}
+
+/* (5) Discount Area */
+.discount {
+  /* border: 2px solid red; */
+  width: 85%;
+  margin: auto;
+  background-image: url('../images/discount-img.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 350px;
+  position: relative; /* parent of the discount-text */
+}
+
+.discount-text {
+  position: absolute; /* child of the discount-text */
+  text-align: center;
+  top: 50%; /*  */
+  left: 50%;
+  transform: translate(-50%, -50%); /* this fixes to the middle of the discount div / translateX and Y - translate() */
+
+}
+
+.discount-text span {
+  /* border: 2px solid red;  */
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+  font-style: italic;
+  text-shadow: 3px 3px 6px #312a26;
+}
+
+.discount-text h2 {
+  font-size:  2em;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 6px #312a26;
+  color: #fff;
+}
+
+.discount-text a {
+  color: #312a26;
+  background-color: rgba(255, 255, 255, 0.5); /* a - opacity 1 = 100% , 0.5 = 50% */
+  /* opacity: 0.7; */
+  text-decoration: none;
+  font-weight: 700;
+  padding: 1em;
+  margin-top: 1em; 
+  display: inline-block; 
+}
+
+/* (7) Ads2 Area */
+
+.ads-items3 {
+  background-image: url('../images/ads-img3.jpg');
+  margin-right: 3%;
+  margin-bottom: 3%;
+}
+
+.ads-items4 {
+  background-image: url('../images/ads-img4.jpg');
+  margin-bottom: 3%;
+}
+
+.ads-items5 {
+  background-image: url('../images/ads-img5.jpg');
+  margin-right: 3%;
+}
+
+.ads-items6 {
+  background-image: url('../images/ads-img6.jpg');
+}
+
+/* (8) Reservation Area */
+.reservation {
+  /* border: 2px solid red; */
+  width: 85%;
+  margin: 4em auto;
+}
+
+form {
+  overflow: auto;
+
+}
+
+.form-group {
+  /* border: 2px solid red; */
+  width: 49.5%;
+  float: left;
+  background-color: #f2f2f2;
+  height: 650px;
+  border-radius: 5px;
+  margin-top: 2em;
+  padding: 2em;
+}
+
+/* the first child of the form-group */
+.form-group:nth-child(1) {
+  margin-right: 1%;
+}
+
+form input, form label, form select, form textarea {
+  /* border: 2px solid red; */
+  display: inline-block; /* arrange the elements one per line. inline-block can't set other values*/
+  width: 100%;
+  font-family: 'Raleway', sans-serif;
+  padding: 1em; /* put spaces around 1em*/
+  margin-bottom: 1em; /* add spaces after these elements of 1em */
+}
+
+form label {
+  padding: 0;
+  margin-bottom: .5em;
+  font-weight: 700;
+}
+
+form p {
+  text-align: center;
+  font-weight: 700;
+  margin: 1em;
+}
+
+form h3 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.res-time {
+  text-align: center;
+}
+
+.res-time * {
+  /* display: inline-block;  It's already difined above */
+  width: auto;
+}
+
+/* after form h3  */
+form h3::after {
+  content:"";
+  background-image: url('../images/reservation-cards.png');
+  background-size: contain;
+  background-repeat: no-repeat; /* It's okay to adjust the height too. */
+  display: block;
+  width: 150px;
+  height: 30px;
+  margin: auto; 
+}
+
+.res-agreement * {
+  width: auto;
+}
+
+/* specific a input type (This time, input type="submit" ) */
+form input[type="submit"] {
+  background-color: #c7a17a;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* (9) Footer Area */
+.footer {
+  /* border: 2px solid red; */
+  background-image: url('../images/footer-img.jpg');
+  background-size: cover;
+  background-position: center;
+  /* height: 350px; */ /* No need to specify */
+
+  /* margin doesn't work.... margin collapse in the footer-content / set overflow auto so that margin can be used. */
+  padding-top: 2em; 
+  padding-bottom: 2em;
+  font-family: 'Raleway', sans-serif;
+}
+
+.footer-content {
+  /* border: 2px solid green; */
+  width: 85%;
+  margin: 2em auto;
+  overflow: auto;
+  /* height: 250px; */
+}
+
+.footer-widget {
+  /* border: 2px solid pink; */
+  /* color: #fff; */
+  width: 24.25%;
+  /* height: 240px; */
+  float: left;
+}
+
+.footer-widget:nth-child(1), .footer-widget:nth-child(2), .footer-widget:nth-child(3) {
+  margin-right: 1%;
+}
+
+.footer-widget h3 {
+  color: #fff;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+}
+
+.footer-widget th, .footer-widget td {
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+}
+
+.footer-widget h4 {
+  color: #fff;
+}
+
+.footer-widget p {
+  color: #c7a17a;
+}
+
+.footer-form * {
+  width: auto;
+}
+
+/* (10) Social Footer Area */
+.footer-social {
+  /* border: 2px solid red; */
+  background-color: #19100F;
+  overflow: auto; /* need this to display three social widjets */
+  padding: 1em 7.5%;
+  /* padding-right: 7.5%; */
+}
+
+.footer-social h3, .footer-social p {
+  color: #fff;
+}
+
+.footer-social h3 {
+  text-transform: uppercase;
+}
+
+.footer-social img {
+  width: 1.5em;
+}
+
+.social-widget {
+  /* border: 2px solid yellow; */
+  float: left;
+  /* width: 25%; */
+  width: 33.33%;
+  text-align: center;
+}
